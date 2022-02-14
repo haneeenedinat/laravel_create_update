@@ -94,5 +94,7 @@ class CategorryController extends Controller
     public function destroy(Categorry $categorry)
     {
         //
+        $categorry->deleteOrFail(); 
+        return redirect()->back();
     }
 }

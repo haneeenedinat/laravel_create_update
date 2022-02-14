@@ -22,6 +22,8 @@ class ProductController extends Controller
         //     "age"=>"25"],
         // ];
         // return view(view:'product.index',compact(var))
+        // return view('products.index');
+
     }
 
     /**
@@ -65,6 +67,10 @@ class ProductController extends Controller
     public function show(product $product)
     {
         //
+        $products=Product::all();
+        return view("products.index",compact('products'));
+        // return view('products.index');
+
     }
 
     /**
@@ -103,5 +109,7 @@ class ProductController extends Controller
     public function destroy(product $product)
     {
         //
-    }
+        $product->deleteOrFail(); 
+        return redirect()->back();
+      }
 }

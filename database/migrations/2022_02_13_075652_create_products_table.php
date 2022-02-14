@@ -19,7 +19,7 @@ class CreateProductsTable extends Migration
             $table->text("description");
             $table->integer("quatity");
             $table->integer("price");
-            $table->unsignedBigInteger("category_id");
+            // $table->unsignedBigInteger("category_id");
             // $table->foreign("category_id")->references("id")->on("categorries")->onDelete("CASCADE");
             $table->enum("status",['in stock','out of stock']);
             $table->timestamps();

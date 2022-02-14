@@ -19,7 +19,8 @@ use App\Http\Controllers\CategorryController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/products', [ProductController::class,'index']);
+
+Route::get('/products/index', [ProductController::class,'show']);
 
 
 Route::get('/products/create', [ProductController::class,'create']);
@@ -34,6 +35,12 @@ Route::post('/Categorry/create', [CategorryController::class,'store'])->name('cr
 
 Route::get('/Categorry/edit/{categorry}', [CategorryController::class,'edit']);
 Route::put('/Categorry/update/{categorry}', [CategorryController::class,'update'])->name('update_categorry');
+
+Route::get('/products/delete/{product}', [ProductController::class,'destroy'])->name('delete_product');
+
+Route::get('/Categorry/delete/{categorry}', [CategorryController::class,'destroy'])->name('delete_categorry');
+
+
 
 
 // Route::get('/products/create', [CategorryController::class,'create']);
